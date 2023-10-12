@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<style>
+      .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .form-group input, .form-group textarea {
+            width: calc(50% - 5px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* .form-group label{
+            margin-top: 11px;
+        } */
+        @media (max-width: 768px) {
+            .form-group {
+                flex-direction: column;
+            }
+            .form-group input, .form-group textarea {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+</style>
+<body>
+    <div class="registration-container">
+        <h1>Registration Form</h1>
+        <form action="/register3" method="post">
+
+            
+
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Doctor Name" required>
+                <input type="text" name="clinic_name" placeholder="Clinic Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="someone@gmail.com" required>
+                <input type="password" name="password" placeholder="password" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date Of Birth:</label>
+
+                <input type="date" name="DOB" placeholder="dd-mm-yyyy" required>
+                <input type="number" name="contact" placeholder="Contact" required>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="female">Female</label>
+                <label><input type="radio" name="gender" value="other">Other</label>
+            </div>
+            <div class="form-group">
+                <input type="number" name="age" placeholder="Age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea type="text" name="address" id="address" class="babu" id="address" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="idFile">Upload ID:</label>
+                <input type="file" name="idFile" id="idFile" accept=".pdf, .doc, .docx" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p>Already have an account? <a href="/doctor-login">Login here</a>.</p>
+
+    </div>
+</body>
+</html>
